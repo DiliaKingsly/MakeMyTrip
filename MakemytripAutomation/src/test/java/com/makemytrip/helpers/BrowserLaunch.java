@@ -13,7 +13,8 @@ public class BrowserLaunch {
 
 	@BeforeMethod
 	public void launchbrowser() {
-		System.setProperty("webdriver.chrome.driver", "c:\\Driver\\chromedriver.exe");
+		System.out.println(System.getProperty("user.dir"));
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Driver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
